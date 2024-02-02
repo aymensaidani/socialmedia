@@ -1,0 +1,80 @@
+.publication {
+    -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+    -moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+    box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+    border-radius: 20px;
+    background-color: var(--bg); /* Assuming themed("bg") resolves to a CSS variable */
+    color: var(--textColor); /* Assuming themed("textColor") resolves to a CSS variable */
+    margin-bottom: 20px;
+  }
+  
+  .publication .container {
+    padding: 20px;
+  }
+  
+  .publication .container .top {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .publication .container .top img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .publication .container .top input {
+    border: none;
+    outline: none;
+    padding: 20px 10px;
+    background-color: transparent;
+    width: 60%;
+    color: var(--textColor); /* Assuming themed("textColor") resolves to a CSS variable */
+  }
+  
+  .publication .container hr {
+    margin: 20px 0px;
+    border: none;
+    height: 0.5px;
+    background-color: var(--border); /* Assuming themed("border") resolves to a CSS variable */
+  }
+  
+  .publication .container .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .publication .container .bottom .left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .publication .container .bottom .left .item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
+  
+  .publication .container .bottom .left .item img {
+    height: 20px;
+  }
+  
+  .publication .container .bottom .left .item span {
+    font-size: 12px;
+    color: gray;
+  }
+  
+  .publication .container .bottom .right button {
+    border: none;
+    padding: 5px;
+    color: white;
+    cursor: pointer;
+    background-color: #5271ff;
+    border-radius: 3px;
+  }
+  

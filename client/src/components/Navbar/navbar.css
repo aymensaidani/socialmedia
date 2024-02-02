@@ -1,0 +1,146 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 50px;
+  background-color: #5271ff;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  position: relative; /* Add relative positioning */
+}
+
+.navbar__left,
+.navbar__center,
+.navbar__right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__left {
+  flex: 1;
+}
+
+.navbar__logo {
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem; /* Increase font size for logo */
+}
+
+.navbar__search {
+  position: relative; /* Add relative positioning */
+  display: flex;
+  align-items: center;
+}
+
+.navbar__searchInput {
+  border: none;
+  padding: 10px 40px 10px 10px; /* Add padding for the search icon */
+  font-size: 1rem; /* Adjust font size for search input */
+  width: 500px; /* Set a fixed width for the input */
+  border-radius: 20px; /* Add border radius for a rounded appearance */
+  background-color: #f2f2f2; /* Add a light background color */
+  outline: none; /* Remove outline */
+  transition: all 0.3s ease; /* Add transition for smooth hover effect */
+}
+
+.navbar__searchInput::placeholder {
+  color: #999; /* Set placeholder text color */
+}
+
+.navbar__searchInput:hover {
+  background-color: #e0e0e0; /* Darken background color on hover */
+}
+
+.navbar__searchInput:focus {
+  background-color: #fff; /* Change background color on focus */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Add shadow on focus */
+}
+
+.navbar__searchIcon {
+  position: absolute; /* Add absolute positioning */
+  right: 10px; /* Adjust position from the right */
+  color: #666; /* Set search icon color */
+  cursor: pointer; /* Add cursor pointer */
+}
+
+.navbar__searchIcon:hover {
+  color: #333; /* Darken search icon color on hover */
+}
+
+.navbar__right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px; /* Add some gap between icons */
+}
+
+.navbar__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.navbar__notificationsCount {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+.iom{
+  cursor: pointer;
+}
+.navbar__userImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.navbar__dropdown {
+  position: absolute; /* Change position to absolute */
+  /* Adjust positioning to appear below the navbar */
+  right: 60px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 60px;
+  z-index: 999; /* Ensure the dropdown appears above other elements */
+}
+
+.navbar__dropdownOption {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.navbar__dropdownOption:hover {
+  background-color: #f0f0f0;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .navbar__center {
+    margin-top: 10px;
+  }
+
+  .navbar__search {
+    width: 100%;
+  }
+
+  .navbar__searchInput {
+    width: calc(100% - 40px);
+  }
+
+  .navbar__right {
+    margin-top: 10px;
+    justify-content: flex-start;
+  }
+}
