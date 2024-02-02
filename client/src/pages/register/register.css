@@ -1,83 +1,105 @@
 .register {
-    height: 100vh;
-    /* background-color: rgb(193, 190, 255); */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .register .card {
-    width: 50%;
-    display: flex;
-    flex-direction: row-reverse;
-    background-color: white;
-    border-radius: 10px;
-    min-height: 600px;
-    overflow: hidden;
-  }
-  
-  .register .card .left {
-    flex: 1;
-    background: linear-gradient(rgba(39, 11, 96, 0.5), rgba(39, 11, 96, 0.5)), url("https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600") center;
-    background-size: cover;
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    color: white;
-  }
-  
-  .register .card .left h1 {
-    font-size: 100px;
-    line-height: 100px;
-  }
-  
-  .register .card .left span {
-    font-size: 14px;
-  }
-  
-  .register .card .left button {
-    width: 50%;
-    padding: 10px;
-    border: none;
-    background-color: white;
-    color: rebeccapurple;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .register .card .right {
-    flex: 1;
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    justify-content: center;
-  }
-  
-  .register .card .right h1 {
-    color: #555;
-  }
-  
-  .register .card .right form {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
-  
-  .register .card .right form input {
-    border: none;
-    border-bottom: 1px solid lightgray;
-    padding: 20px 10px;
-  }
-  
-  .register .card .right form button {
-    width: 50%;
-    padding: 10px;
-    border: none;
-    background-color: #938eef;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
+  height: 100vh;
+  background: linear-gradient(rgba(9, 86, 219, 0.8), rgba(13, 152, 206, 0.8)),
+  url('https://img.freepik.com/free-photo/happy-diverse-people-using-digital-devices_53876-98464.jpg');  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register .card {
+  width: 60%;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.register .card .left {
+  flex: 1;
+  background: linear-gradient(rgba(82, 113, 255, 0.8), rgba(82, 113, 255, 0.8));
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  color: white;
+}
+
+.register .card .left h1 {
+  font-size: 4rem;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.register .card .left p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.register .card .left span {
+  font-size: 1.2rem;
+}
+
+.register .card .left button {
+  width: 50%;
+  padding: 15px;
+  border: none;
+  background-color: white;
+  color: #5271ff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.register .card .left button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.register .card .right {
+  flex: 1;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+}
+
+.register .card .right h1 {
+  color: #5271ff;
+  font-size: 3rem;
+}
+
+.register .card .right form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.register .card .right form input {
+  border: none;
+  border-bottom: 2px solid #938eef;
+  padding: 15px 10px;
+  font-size: 1.2rem;
+  transition: border-bottom-color 0.3s ease;
+}
+
+.register .card .right form input:focus {
+  outline: none;
+  border-bottom-color: #5271ff;
+}
+
+.register .card .right form button {
+  width: 50%;
+  padding: 15px;
+  border: none;
+  background-color: #5271ff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.register .card .right form button:hover {
+  background-color: #b9bbc2;
+}

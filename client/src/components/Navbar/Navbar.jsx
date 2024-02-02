@@ -7,14 +7,14 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
-  const { currentUser } = useContext(AuthContext);
+  const { currentUser, logout } = useContext(AuthContext); // Destructure logout function from AuthContext
 
   const toggleDropdown = () => {
     setDropdownVisible(!dropdownVisible);
   };
 
   const handleLogout = () => {
-    // Implement logout functionality
+    logout()
   };
 
   return (

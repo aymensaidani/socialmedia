@@ -27,13 +27,23 @@ export const AuthContextProvider = ({ children }) => {
     localStorage.setItem('user', JSON.stringify({ ...currentUser, profilePic: newProfilePic }));
   };
 
-  
+  const logout = async () => {
+    try {
+      await axios.get('http://localhost:3001/api/auth/logout', {
+        withCredentials: true,
+      });
+      setCurrentUser(null);
+      localStorage.removeItem('user');
+    } catch (error) {
+      console.error('Error logging out:', error);
+    }
+  };
   useEffect(() => {
     localStorage.setItem('user', JSON.stringify(currentUser));
   }, [currentUser]);
 
   return (
-    <AuthContext.Provider value={{ currentUser, login, updateProfilePic }}>
+    <AuthContext.Provider value={{ currentUser, login, updateProfilePic, logout }}>
       {children}
     </AuthContext.Provider>
   );

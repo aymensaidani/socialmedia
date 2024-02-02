@@ -1,81 +1,106 @@
 .login {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .login .card {
-    width: 50%;
-    display: flex;
-    background-color: white;
-    border-radius: 10px;
-    min-height: 600px;
-    overflow: hidden;
-  }
-  
-  .login .card .left {
-    flex: 1;
-    background: linear-gradient(rgba(39, 11, 96, 0.5), rgba(39, 11, 96, 0.5));
-    background-size: cover;
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    color: white;
-  }
-  
-  .login .card .left h1 {
-    font-size: 100px;
-    line-height: 100px;
-  }
-  
-  .login .card .left span {
-    font-size: 14px;
-  }
-  
-  .login .card .left button {
-    width: 50%;
-    padding: 10px;
-    border: none;
-    background-color: white;
-    color: rebeccapurple;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .login .card .right {
-    flex: 1;
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    justify-content: center;
-  }
-  
-  .login .card .right h1 {
-    color: #555;
-  }
-  
-  .login .card .right form {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
-  
-  .login .card .right form input {
-    border: none;
-    border-bottom: 1px solid lightgray;
-    padding: 20px 10px;
-  }
-  
-  .login .card .right form button {
-    width: 50%;
-    padding: 10px;
-    border: none;
-    background-color: #938eef;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
+  height: 100vh;
+  background: linear-gradient(rgba(9, 86, 219, 0.8), rgba(13, 152, 206, 0.8)),
+    url('https://img.freepik.com/free-photo/happy-diverse-people-using-digital-devices_53876-98464.jpg');
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login .card {
+  width: 60%;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.login .card .left {
+  flex: 1;
+  background: linear-gradient(rgba(82, 113, 255, 0.8), rgba(82, 113, 255, 0.8));
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  color: white;
+}
+
+.login .card .left h1 {
+  font-size: 4rem;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.login .card .left p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.login .card .left span {
+  font-size: 1.2rem;
+}
+
+.login .card .left button {
+  width: 50%;
+  padding: 15px;
+  border: none;
+  background-color: white;
+  color: #5271ff; /* Updated color */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login .card .left button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.login .card .right {
+  flex: 1;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+}
+
+.login .card .right h1 {
+  color: #5271ff; /* Updated color */
+  font-size: 3rem;
+}
+
+.login .card .right form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.login .card .right form input {
+  border: none;
+  border-bottom: 2px solid #5271ff; /* Updated color */
+  padding: 15px 10px;
+  font-size: 1.2rem;
+  transition: border-bottom-color 0.3s ease;
+}
+
+.login .card .right form input:focus {
+  outline: none;
+  border-bottom-color: #5271ff; /* Updated color */
+}
+
+.login .card .right form button {
+  width: 50%;
+  padding: 15px;
+  border: none;
+  background-color: #5271ff; /* Updated color */
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login .card .right form button:hover {
+  background-color: #3457d2; /* Slightly darker shade on hover */
+}
