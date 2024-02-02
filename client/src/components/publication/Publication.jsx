@@ -11,7 +11,6 @@ const Publication = () => {
   const [desc, setDesc] = useState('');
   const [uploading, setUploading] = useState(false);
   const { currentUser } = useContext(AuthContext);
-  console.log(currentUser);
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
   };

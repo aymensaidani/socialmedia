@@ -15,7 +15,8 @@ import { useContext, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Update from '../../components/update/Update.jsx';
 
-const Profile = () => {
+const Profile = ({socket}) => {
+  console.log(socket);
   const [openUpdate, setOpenUpdate] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -24,7 +25,7 @@ const Profile = () => {
   const { currentUser } = useContext(AuthContext);
   console.log(currentUser);
   const userId = parseInt(useLocation().pathname.split('/')[2]);
-  console.log(userId, 'userid');
+  console.log(userId, 'userid in profile');
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -56,6 +57,12 @@ const Profile = () => {
       } else {
         await makeRequest.post('/relationships', { userId });
         setRelationshipData([...relationshipData, currentUser.id]);
+         // Send socket message when a user follows another user
+      socket.emit("sendText", {
+        senderName: currentUser.id,
+        receiverName: userId,
+        text: `The  ${currentUser.username} is now following you.`,
+      });
       }
     } catch (error) {
       console.error('Failed to toggle follow:', error);

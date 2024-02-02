@@ -19,7 +19,7 @@ const Login = () => {
     e.preventDefault();
     try {
       await login(inputs);
-      navigate("/")
+      navigate('/');
     } catch (err) {
       // Check if error object exists and has a response property
       if (err && err.response && err.response.data) {
@@ -27,16 +27,16 @@ const Login = () => {
         setErr(err.response.data);
       } else {
         // If error object or response data is undefined, set a generic error message
-        setErr("An error occurred while logging in.");
+        setErr('An error occurred while logging in.');
       }
     }
   };
-  
+
   return (
     <div className="login">
       <div className="card">
         <div className="left">
-          <h1>Hello World.</h1>
+          <h1>We hope you enjoy</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero cum,
             alias totam numquam ipsa exercitationem dignissimos, error nam,
@@ -52,7 +52,7 @@ const Login = () => {
           <form>
             <input
               onChange={handleChange}
-              name='username'
+              name="username"
               type="text"
               id="username"
               autoComplete="username"
@@ -60,7 +60,7 @@ const Login = () => {
             />
             <input
               onChange={handleChange}
-              name='password'
+              name="password"
               type="password"
               placeholder="Password"
             />

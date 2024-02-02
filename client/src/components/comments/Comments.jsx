@@ -23,7 +23,6 @@ const Comments = ({ postId }) => {
     setIsLoading(false);
   };
 
-  console.log(currentUser,"curentuser");
 
   useEffect(() => {
     fetchComments();

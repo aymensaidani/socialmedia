@@ -11,21 +11,28 @@ import Navbar from "./components/Navbar/Navbar.jsx";
 import Home from "./pages/home/Home";
 import Profile from "./pages/profile/Profile";
 import "./App.css";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "./context/authContext";
+import { io } from "socket.io-client";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
-
+///////
+const [socket,setSocket]= useState(null)
+useEffect(() => {
+  const socket = io("http://localhost:5000", { transports: ["websocket"] });
+  setSocket(socket);
+}, []);
+//////
 
 
   const Layout = () => {
     return (
         <div >
-          <Navbar />
+          <Navbar socket={socket} />
           <div >
             <div >
-              <Outlet />
+              <Outlet socket={socket}  />
             </div>
            
           </div>
@@ -52,21 +59,21 @@ function App() {
       children: [
         {
           path: "/",
-          element: <Home />,
+          element: <Home socket={socket} />,
         },
         {
           path: "/profile/:id",
-          element: <Profile />,
+          element: <Profile socket={socket}  />,
         },
       ],
     },
     {
       path: "/login",
-      element: <Login />,
+      element: <Login socket={socket}  />,
     },
     {
       path: "/register",
-      element: <Register />,
+      element: <Register socket={socket}  />,
     },
   ]);
 

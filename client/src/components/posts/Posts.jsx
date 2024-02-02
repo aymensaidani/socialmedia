@@ -26,7 +26,6 @@ const Posts = ({userId,data}) => {
     return () => {
     };
   }, []);
-console.log(posts);
   return (
     <div className="posts">
       {error ? "Something went wrong" : isLoading ? "Loading" : (
