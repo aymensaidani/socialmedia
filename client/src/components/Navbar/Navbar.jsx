@@ -94,7 +94,7 @@ const Navbar = ({ socket, search }) => {
     } else {
       setFilteredData(
         originalData.filter((user) =>
-          user.username.toLowerCase().includes(inputValue)
+          user.name.toLowerCase().includes(inputValue)
         )
       );
     }
@@ -127,12 +127,19 @@ const Navbar = ({ socket, search }) => {
         </div>
 
         {searchInput && (
-          <div className="filteredUsernames ">
-            {filteredData.map((user) => (
-              <Link key={user.id} to={`/profile/${user.id}`}>
-                {user.username}
-              </Link>
-            ))}
+          <div className="filteredUsernamesContainer">
+            <div className="filteredUsernames">
+              {filteredData.map((user) => (
+                <Link
+                  key={user.id}
+                  to={`/profile/${user.id}`}
+                  className="userLink"
+                >
+                  <div className="username">{user.name}</div>
+                  <img src={user.profilePic} alt="" className="profilePic" />
+                </Link>
+              ))}
+            </div>
           </div>
         )}
       </div>

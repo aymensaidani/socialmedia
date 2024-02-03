@@ -15,8 +15,8 @@ import { useContext, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Update from '../../components/update/Update.jsx';
 
-const Profile = ({socket}) => {
-  console.log(socket,"profile");
+const Profile = ({ socket }) => {
+  console.log(socket, 'profile');
   const [openUpdate, setOpenUpdate] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -57,12 +57,12 @@ const Profile = ({socket}) => {
       } else {
         await makeRequest.post('/relationships', { userId });
         setRelationshipData([...relationshipData, currentUser.id]);
-         // Send socket message when a user follows another user
-      socket.emit("sendText", {
-        senderName: currentUser.id,
-        receiverName: userId,
-        text: `${currentUser.username} is now following you.`,
-      });
+        // Send socket message when a user follows another user
+        socket.emit('sendText', {
+          senderName: currentUser.id,
+          receiverName: userId,
+          text: `${currentUser.username} is now following you.`,
+        });
       }
     } catch (error) {
       console.error('Failed to toggle follow:', error);
@@ -95,11 +95,13 @@ const Profile = ({socket}) => {
                       : 'Follow'}
                   </button>
                 )}
+                <div>
+                <p>Number of followers: {relationshipData.length}</p>
+
+                  
+                </div>
               </div>
-              {/* <div className="right">
-            <EmailOutlinedIcon />
-            <MoreVertIcon />
-          </div> */}
+             
             </div>
             <Posts userId={userId} data={data} />
           </div>
