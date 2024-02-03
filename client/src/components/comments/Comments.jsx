@@ -4,7 +4,8 @@ import { AuthContext } from '../../context/authContext.jsx';
 import { makeRequest } from '../../axios.js';
 import moment from 'moment';
 
-const Comments = ({ postId }) => {
+const Comments = ({ postId , socket }) => {
+  console.log(socket,"comment");
   const [desc, setDesc] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);

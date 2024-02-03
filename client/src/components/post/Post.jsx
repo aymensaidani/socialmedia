@@ -9,7 +9,7 @@ import { AuthContext } from '../../context/authContext.jsx';
 import { IoIosMore } from 'react-icons/io';
 
 import moment from 'moment';
-const Post = ({ post, data }) => {
+const Post = ({ post, data,socket }) => {
   const [commentOpen, setCommentOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [likes, setLikes] = useState([]);
@@ -46,6 +46,11 @@ const Post = ({ post, data }) => {
       } else {
         await makeRequest.post('/likes', { postId: post.id });
         setLikes([...likes, currentUser.id]);
+        socket.emit("sendText", {
+          senderName: currentUser.id,
+          receiverName: post.id,
+          text: `${currentUser.username} like youre post.`,
+        });
       }
     } catch (error) {
       console.error('Failed to toggle like:', error);
@@ -107,7 +112,7 @@ const Post = ({ post, data }) => {
             Share
           </div>
         </div>
-        {commentOpen && <Comments postId={post.id} />}
+        {commentOpen && <Comments socket={socket} postId={post.id} />}
       </div>
     </div>
   );

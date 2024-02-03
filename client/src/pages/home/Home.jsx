@@ -18,8 +18,8 @@ console.log(socket);
   return (
     <div>
         {/* <Stories/> */}
-        <Publication/>
-        <Posts/>
+        <Publication socket={socket}/>
+        <Posts socket={socket}/>
         {/* <RightBar/> */}
     </div>
   )

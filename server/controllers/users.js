@@ -11,6 +11,14 @@ const getUser =  (req,res)=>{
       return res.json(info);
     });
 }
+const getAllUser =  (req,res)=>{
+  const q = "SELECT * FROM users";
+
+  db.query(q, (err, data) => {
+    if (err) return res.status(500).json(err);
+    return res.json(data); // Return the data received from the database query
+  });
+}
 const updateUser = (req, res) => {
     const token = req.cookies.accessToken;
     if (!token) return res.status(401).json("Not authenticated!");
@@ -42,5 +50,6 @@ const updateUser = (req, res) => {
 
 module.exports={
     getUser,
-    updateUser
+    updateUser,
+    getAllUser
 }

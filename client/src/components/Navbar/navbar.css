@@ -8,6 +8,33 @@
   margin-bottom: 10px;
   position: relative; /* Add relative positioning */
 }
+.notification-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 300px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.notification-dropdown div {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.notification-dropdown div:last-child {
+  border-bottom: none;
+}
+
+.notification-dropdown div:hover {
+  background-color: #f0f2f5;
+}
+
 /* navbar.css */
 
 .badge {
@@ -103,7 +130,7 @@
   padding: 2px 6px;
   border-radius: 50%;
 }
-.iom{
+.iom {
   cursor: pointer;
 }
 .navbar__userImage {

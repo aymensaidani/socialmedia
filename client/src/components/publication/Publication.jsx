@@ -6,7 +6,8 @@ import { AuthContext } from '../../context/authContext.jsx';
 import { makeRequest } from '../../axios.js';
 import axios from 'axios';
 
-const Publication = () => {
+const Publication = ({socekt}) => {
+  
   const [file, setFile] = useState(null);
   const [desc, setDesc] = useState('');
   const [uploading, setUploading] = useState(false);

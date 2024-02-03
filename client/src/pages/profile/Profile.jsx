@@ -16,7 +16,7 @@ import { useLocation } from 'react-router-dom';
 import Update from '../../components/update/Update.jsx';
 
 const Profile = ({socket}) => {
-  console.log(socket);
+  console.log(socket,"profile");
   const [openUpdate, setOpenUpdate] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -61,7 +61,7 @@ const Profile = ({socket}) => {
       socket.emit("sendText", {
         senderName: currentUser.id,
         receiverName: userId,
-        text: `The  ${currentUser.username} is now following you.`,
+        text: `${currentUser.username} is now following you.`,
       });
       }
     } catch (error) {

@@ -3,7 +3,7 @@ import Post from "../post/Post";
 import "./posts.css";
 import { makeRequest } from '../../axios';
 
-const Posts = ({userId,data}) => {
+const Posts = ({userId,data,socket}) => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [posts, setPosts] = useState([]);
@@ -29,7 +29,7 @@ const Posts = ({userId,data}) => {
   return (
     <div className="posts">
       {error ? "Something went wrong" : isLoading ? "Loading" : (
-        posts.map((post) => <Post data={data} post={post} key={post.id} />)
+        posts.map((post) => <Post socket={socket} data={data} post={post} key={post.id} />)
       )}
     </div>
   );
